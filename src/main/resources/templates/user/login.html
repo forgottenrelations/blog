@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<body>
+<header>
+    <nav th:replace="fragments :: navBar"></nav>
+</header>
+
+<main>
+    <ul th:if="${users.size()}">
+        <li th:each="user : ${users}" th:text="${user.email}"></li>
+    </ul>
+
+    <form action="" method="post">
+        <label>Email: <input type="email" name="email" /></label>
+        <label>Password: <input type="password" name="password" /></label>
+        <input type="submit" value="Login" />
+    </form>
+    <p th:if="${passwordErr}" th:text="${passwordErr}"></p>
+
+    <p><a href="/user/create">Create a New User!</a></p>
+</main>
+
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

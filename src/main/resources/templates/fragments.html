@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragments="head" >
+    <meta charset="UTF-8"/>
+    <link rel = "stylesheet" th:href="@{/css/styles.css}" />
+    <title th:text="${title}">Forgotten Relations</title>
+</head>
+<body>
+
+<header>
+    <nav th:fragment="navBar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/user">Login</a></li>
+        </ul>
+    </nav>
+    <nav th:fragment="blogNav">
+        <ul>
+            <li><a href="/blog">List</a></li>
+            <li><a href="/blog/create">Create</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<footer th:fragment="footer">
+    <p>Forgotten Relations &copy; 2021</p>
+</footer>
+
+</body>
+</html>

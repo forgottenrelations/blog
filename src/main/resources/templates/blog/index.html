@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+    <header>
+        <nav th:replace="fragments :: navBar"></nav>
+        <nav th:replace="fragments :: blogNav"></nav>
+    </header>
+
+    <main>
+        <p th:unless="${blogs.size()}">Sorry no blogs to show yet!</p>
+
+        <th:block th:each="blog : ${blogs}">
+            <ul>
+                <li>ID: <span th:text="${blog.id}"></span></li>
+                <li>Title: <span th:text="${blog.title}"></span></li>
+                <li th:text="${blog.blog}"></li>
+            </ul>
+        </th:block>
+    </main>
+
+
+
+    <footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>
